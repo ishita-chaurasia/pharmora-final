@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pharmaura</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts: Poppins Bold -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-blue: #252B61;
+      --light-blue: #92BDF6;
+      --font-main: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-main);
+      background: #f8faff;
+      color: var(--dark-blue);
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 36px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(37, 43, 97, 0.03);
+      border-radius: 18px;
+      margin: 24px;
+    }
+    .header .search-bar {
+      display: flex;
+      align-items: center;
+      background: #f0f4fa;
+      border-radius: 12px;
+      padding: 8px 16px;
+      min-width: 270px;
+    }
+    .header .search-bar input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 1rem;
+      font-family: var(--font-main);
+      margin-left: 8px;
+      width: 100%;
+    }
+    .header nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .header nav a {
+      color: var(--dark-blue);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .header nav a:hover {
+      color: var(--light-blue);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: var(--dark-blue);
+      color: #fff;
+      border-radius: 28px;
+      margin: 36px 24px 0 24px;
+      padding: 44px 36px 24px 36px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      min-height: 300px;
+      overflow: hidden;
+    }
+    .hero-content {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 2;
+    }
+    .hero-title {
+      font-size: 4rem;
+      font-family: var(--font-main);
+      font-weight: 700;
+      margin: 0 0 12px 0;
+      letter-spacing: 2px;
+    }
+    .hero-features {
+      display: flex;
+      gap: 38px;
+      margin-bottom: 24px;
+      font-size: 1.1rem;
+    }
+    .hero-features span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    /* Move consultation button below the title */
+    .hero .consult-btn {
+      background: var(--light-blue);
+      color: var(--dark-blue);
+      border: none;
+      border-radius: 22px;
+      padding: 14px 38px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 24px;
+      align-self: flex-start;
+      box-shadow: 0 4px 16px rgba(146, 189, 246, 0.18);
+      transition: background 0.2s;
+      position: static;
+    }
+    .hero .consult-btn:hover {
+      background: #b3d6fa;
+    }
+    .hero .doctor-img {
+      flex: 1;
+      max-width: 300px;
+      height: 7cm;
+      position: absolute;
+      right: 48px;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    /* Features Grid */
+    .features-grid {
+      display: flex;
+      gap: 28px;
+      margin: 38px 24px 0 24px;
+    }
+    .feature-card {
+      flex: 1;
+      background: var(--light-blue);
+      color: var(--dark-blue);
+      border-radius: 18px;
+      padding: 32px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      box-shadow: 0 2px 8px rgba(146, 189, 246, 0.11);
+      font-family: var(--font-main);
+    }
+    .feature-card img,
+    .feature-card svg {
+      margin-bottom: 18px;
+      width: 70px;
+      height: 70px;
+    }
+    .feature-card h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    .feature-card p {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #2c3554;
+      opacity: 0.9;
+    }
+
+    /* Digitalizing Doctors Desk */
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin: 54px 0 32px 0;
+      font-family: var(--font-main);
+      font-weight: 700;
+      color: var(--dark-blue);
+      letter-spacing: 1px;
+    }
+    .doctor-desk {
+      display: flex;
+      gap: 24px;
+      margin: 0 24px;
+      flex-wrap: wrap;
+    }
+    .med-chart-card {
+      flex: 2;
+      background: var(--dark-blue);
+      color: #fff;
+      border-radius: 18px;
+      padding: 38px 28px;
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      min-width: 320px;
+      min-height: 140px;
+      position: relative;
+    }
+    .med-chart-card img,
+    .med-chart-card svg {
+      width: 140px;
+      height: 140px;
+      margin-right: 24px;
+      object-fit: contain;
+    }
+    .med-chart-card .play-btn {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      width: 40px;
+      height: 40px;
+      background: var(--light-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dark-blue);
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    .doctor-desk-details {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .doctor-desk-details .info-card {
+      background: var(--light-blue);
+      color: var(--dark-blue);
+      border-radius: 12px;
+      padding: 22px 18px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      min-width: 170px;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .doctor-desk-details .info-row {
+      display: flex;
+      gap: 16px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .hero {
+        flex-direction: column;
+        min-height: 420px;
+        padding-bottom: 110px;
+      }
+      .hero .doctor-img,
+      .hero .consult-btn {
+        position: static;
+        margin-top: 18px;
+      }
+      .doctor-desk {
+        flex-direction: column;
+      }
+      .med-chart-card,
+      .doctor-desk-details {
+        width: 100%;
+      }
+    }
+    @media (max-width: 700px) {
+      .header, .hero, .features-grid, .doctor-desk {
+        margin: 8px;
+        padding: 12px;
+      }
+      .hero-title {
+        font-size: 2.2rem;
+      }
+      .features-grid {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .doctor-desk-details .info-row {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div class="search-bar">
+      <img src="search.png" alt="Logo" width="24" height="24">
+      <input type="text" placeholder="Search Here..">
+    </div>
+    <nav>
+      <a href="#">Healthcare Services</a>
+      <a href="#">Offers</a>
+      <a href="#">Cart</a>
+      <a href="#">Login</a>
+    </nav>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-title">Pharmaura</div>
+      <button class="consult-btn">Book Consultation &rarr;</button>
+      <div class="hero-features">
+        <span>
+          <img src="scan.png" alt="Prescription" width="24" height="24">
+          
+        </span>
+        <span>
+          
+        
+        </span>
+      </div>
+    </div>
+    <img src="doc.png" alt="Doctor" class="doctor-img">
+  </section>
+
+  <!-- Features Grid -->
+  <div class="features-grid">
+    <div class="feature-card">
+      <img src="scan.png" alt="Scan Prescription">
+      <h3>Scan Prescription</h3>
+      <p>From Scribble To Sense.</p>
+    </div>
+    <div class="feature-card">
+      <img src="board.png" alt="Medical History">
+      <h3>Medical History</h3>
+      <p>No More Searching – It’s All Here.</p>
+    </div>
+    <div class="feature-card">
+      <img src="pills.png" alt="24/7 Medicine">
+      <h3>24/7 Medicine</h3>
+      <p>Essentials At Your Doorstep.</p>
+    </div>
+  </div>
+
+  <!-- Digitalizing Doctors Desk -->
+  <div class="section-title">Digitalizing Doctors Desk</div>
+  <div class="doctor-desk">
+    <div class="med-chart-card">
+      <img src="callender.png" alt="Med Chart">
+      <div>
+        <div style="font-size:1.3rem; font-weight:700;">Med Chart</div>
+        <div style="font-size:1rem; font-weight:400;">Your Personalised Timetable For Medicines</div>
+      </div>
+      <div class="play-btn">&#9654;</div>
+    </div>
+    <div class="doctor-desk-details">
+      <div class="info-card">Healthy Habits For A Happy Heart</div>
+      <div class="info-row">
+        <div class="info-card">18yo</div>
+        <div class="info-card">48kg</div>
+        <div class="info-card">5'5ft</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add this right after the header div -->
+<div class="header">
+    ...
+  </div>
+  
+  <!-- Link back to Website 1 -->
+  <div style="text-align: center; margin-top: 16px;">
+    <a href="index.html" style="color: #252B61; font-weight: 700;">← Back to Login Page</a>
+  </div>
+
+  <!-- Optional: Minimal JS for Play Button -->
+  <script>
+    document.querySelector('.play-btn').addEventListener('click', function() {
+      alert('Med Chart feature coming soon!');
+    });
+  </script>
+</body>
+</html>

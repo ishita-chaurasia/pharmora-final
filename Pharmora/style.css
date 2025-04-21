@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --dark-blue: #252B61;
+  --light-blue: #92BDF6;
+  --yellow: #F0DA69;
+  --green: #A3DAC2;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--white);
+}
+
+/* HEADER NAVIGATION */
+header {
+  width: 100%;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-left img {
+  width: 70px;
+}
+
+.search-bar {
+  position: relative;
+}
+
+.search-bar input {
+  padding: 8px 35px 8px 15px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.nav-right {
+  display: flex;
+  gap: 50px;
+}
+
+.nav-right a {
+  text-decoration: none;
+  color: var(--dark-blue);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.nav-right a:hover {
+  color: var(--light-blue);
+}
+
+/* MAIN SECTION */
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.login-container {
+  background-color: var(--dark-blue);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.logo-section {
+  margin-bottom: 2rem;
+}
+
+.logo {
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  color: var(--white);
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+p {
+  color: var(--white);
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 0.5rem 0;
+  border: none;
+  background-color: var(--light-blue);
+  border-radius: 10px;
+  font-size: 1rem;
+  color: var(--white);
+}
+
+.login-form input::placeholder {
+  color: var(--white);
+}
+
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: transparent;
+  color: var(--white);
+  border: 1px solid var(--white);
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: var(--light-blue);
+}
